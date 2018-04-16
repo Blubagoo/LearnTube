@@ -1,0 +1,27 @@
+body {
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+nav li {
+	display:inline-block;
+	text-decoration: none;
+}
+fieldset {
+	border: none;
+	text-align: center;
+}
+legend p{
+	text-align: left;
+
+}
+.search-box {
+	text-align: center;
+}
+#label-input-text {
+	display:block;
+	margin-right: 120px;
+}
+.row {
+	display: inline-block;
+}
