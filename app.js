@@ -27,7 +27,7 @@ function sendRequest(searchTerm, callback) {
 			part: 'snippet',
 			key: API_KEY,
 			q: `${searchTerm} in: name`,
-			maxResults: 20,
+			maxResults: 24,
 			order: 'viewCount',
 			safeSearch: 'moderate',
 			type: 'video'
@@ -45,16 +45,19 @@ function sendRequest(searchTerm, callback) {
 function displayYoutubeSearchData(data) {
 	console.log('display trying resolve');
 	const results = data.items.map((item, index) => renderSearchResults(item));
-	$('.search-results').html(results);
+	$('#search-results').html(results);
 }
 
 function renderSearchResults(result) {
 	console.log('results rendering')
 	return `
-	<div class="row">
-	<div class="col-4-sm">
-	<div class="well">
-	<img src="${result.snippet.thumbnails.default.url}" class="thumnail">`;
+	<div class="well" id="result-well">
+	<img src="${result.snippet.thumbnails.default.url}" class="thumnail">
+	<p id="vid-link"><a href="http://www.youtube.com/watch?v=${result.id.videoId}">${result.snippet.title}</a></p>
+	</div>
+	</div>
+	</div>
+	`;
 }
 
 

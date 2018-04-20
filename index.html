@@ -6,48 +6,53 @@
 	<meta name="viewport" content="width=device-width">
 	<meta name="description" content="Learn with youtube by searching for educational channels">
 	<meta name="keywords" content="Youtube Educational Learn">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link href="main.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
-	<header>
-		<h1 role="banner"> Please choose what kind of videos you want to search for!</h1>
-		<nav role="navigation">
-			<ul>
-				<li>Educational  |</li>
-				<li>Non-Educational</li>
-			</ul>
-		</nav>
-	</header>
+	<div class="container-fluid">
+		<header>
+			<h1 role="banner"> Please choose what kind of videos you want to search for!</h1>
+			<nav role="navigation">
+				<ul>
+					<li>Educational  |</li>
+					<li>Non-Educational</li>
+				</ul>
+			</nav>
+		</header>
 
-	<main role="main">	
-		<section role="region">
-			<fieldset>
-			<div class="search-box">
-			<legend>
-			<form role="form" class="input-form">
-				<label for="input-text" id="label-input-text">Search parameters</label>
-				<div id="search-submit" class+"row">
-					<input type="text" name="input-text" id="search-field" placeholder="Enter phrase or keyword...">
-					<label for="submit-button">
-					<button type="submit" name="submit-button" id="submit-button" class="button">Search!</button>
-					</label>
+		<main role="main">	
+			<section role="region">
+				<fieldset>
+				<div class="search-box">
+				<legend>
+				<form role="form" class="input-form">
+					<label for="input-text" id="label-input-text">Search parameters</label>
+					<div id="search-submit" class+"row">
+						<input type="text" name="input-text" id="search-field" placeholder="Enter phrase or keyword...">
+						<br>
+						<button type="submit" name="submit-button" id="submit-button" class="button">Search!</button>
+						
+					</div>
+				</form>
+				</legend>
 				</div>
-			</form>
-			</legend>
-			</div>
-			</fieldset>
-		</section>
-		<section role="region">
-			<div class="container-fluid search-results">
+				</fieldset>
+			</section>
+			<section role="region">
+				<div class="container-fluid search-results">
+					<div class="row" id="search-results">
+					</div>
 
-			</div>
-		</section>
-	</main>
+				</div>
+			</section>
+		</main>
 
-	<footer>
+		<footer>
 
-	</footer>
-
+		</footer>
+	</div>
 <script
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
