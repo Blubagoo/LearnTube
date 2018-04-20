@@ -5,31 +5,60 @@ function handleSubmit() {
 	$('.input-form').submit(function(event) {
 		event.preventDefault(); 
 		console.log("button squelched");
-		pullValue();
+		let search = $('#search-field').val();
+		$('#search-field').val('');
+		
+
+
+		sendRequest(search, displayYoutubeSearchData);
+  		console.log(search);
 	});
 	
 }
 
 //pull value from seach field
-function pullValue() {
-	let search = $('#search-field').val();
-	$('#search-field').val('');
-  	console.log(search);
+
+//send api request
+function sendRequest(searchTerm, callback) {
+	console.log('request being sent');
+	const settings = {
+		url: YOUTUBE_URL,
+		data: {
+			part: 'snippet',
+			key: API_KEY,
+			q: `${searchTerm} in: name`,
+			maxResults: 20,
+			order: 'viewCount',
+			safeSearch: 'moderate',
+			type: 'video'
+
+		},
+		dataType: 'json',
+		type: 'GET',
+		success: callback
+	};
+
+	$.ajax(settings);
+
+}
+//render results 
+function displayYoutubeSearchData(data) {
+	console.log('display trying resolve');
+	const results = data.items.map((item, index) => renderSearchResults(item));
+	$('.search-results').html(results);
+}
+
+function renderSearchResults(result) {
+	console.log('results rendering')
+	return `
+	<div class="row">
+	<div class="col-4-sm">
+	<div class="well">
+	<img src="${result.snippet.thumbnails.default.url}" class="thumnail">`;
 }
 
 
 
-
-
-
-
-
-
-
-
-
-//send api request
-//render results 
 //display results in thumbnails with title 
 //create page buttons to navigate through results
 
