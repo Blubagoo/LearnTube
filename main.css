@@ -25,3 +25,9 @@ legend p{
 .row {
 	display: inline-block;
 }
+body {
+	padding-top: 50px;
+}
+nav {
+	padding-top: 20px;
+}
