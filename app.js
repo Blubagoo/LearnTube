@@ -27,7 +27,7 @@ function sendRequest(searchTerm, callback) {
 			part: 'snippet',
 			key: API_KEY,
 			q: `${searchTerm} in: name`,
-			maxResults: 24,
+			maxResults: 27,
 			order: 'viewCount',
 			safeSearch: 'moderate',
 			type: 'video'
@@ -54,8 +54,6 @@ function renderSearchResults(result) {
 	<div class="well" id="result-well">
 	<img src="${result.snippet.thumbnails.default.url}" class="thumnail">
 	<p id="vid-link"><a href="http://www.youtube.com/watch?v=${result.id.videoId}">${result.snippet.title}</a></p>
-	</div>
-	</div>
 	</div>
 	`;
 }
